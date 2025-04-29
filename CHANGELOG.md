@@ -10,3 +10,8 @@ All notable changes to this project will be documented in this file.
 - Changed: package.json
 - Changed: src/
 - Changed: tsconfig.lib.json
+
+## [2.0.9] - 2025-04-29
+
+- Modified: package.json
+- Modified: src/models/user.model.service.ts

@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 import { User, UserDocument } from '../entities/user.entity'
@@ -6,6 +6,7 @@ import * as bcrypt from 'bcrypt'
 import * as moment from 'moment'
 import { EventEmitter2 } from '@nestjs/event-emitter'
 import { IAuth } from '@hsuite/auth-types';
+import { LoggerHelper } from '@hsuite/helpers/logger.helper'
 
 /**
  * Service responsible for managing user data in the database.
@@ -61,7 +62,11 @@ import { IAuth } from '@hsuite/auth-types';
  */
 @Injectable()
 export class UserModelService {
-  protected logger: Logger = new Logger(UserModelService.name);
+  /**
+   * Logger instance for the UserModelService
+   * @type {LoggerHelper}
+   */
+  protected logger: LoggerHelper = new LoggerHelper(UserModelService.name);
 
   /**
    * Creates an instance of UserModelService.
